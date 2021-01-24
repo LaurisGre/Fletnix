@@ -1,12 +1,10 @@
 import { useContent } from '../hooks';
+import selectionFilter from '../utils/selection-filter';
 
-export default function Browse({ }) {
-    // We need the series and the films
+export default function Browse() {
     const { series } = useContent('series');
     const { films } = useContent('films');
-
-    // we need slides
-    // pass it to the browse container
+    const slides = selectionFilter({ series, films });
 
     return <p>Hai this is browse</p>
 }
