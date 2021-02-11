@@ -15,11 +15,11 @@ export default function useAuthListener() {
             } else {
                 localStorage.removeItem('authUser');
                 setUser(null);
-            }
+            };
         })
 
         return () => listener();
-    });
+    }, []);
 
     return { user };
-}
+};

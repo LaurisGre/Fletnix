@@ -9,7 +9,8 @@ export default function useContent(target) {
         firebase
             .firestore()
             .collection(target)
-            .get().then((snapshot) => {
+            .get()
+            .then((snapshot) => {
                 const allContent = snapshot.docs.map((contentObj) => ({
                     ...contentObj.data(),
                     docId: contentObj.id,
@@ -20,7 +21,7 @@ export default function useContent(target) {
             .catch((error) => {
                 console.log(error.message);
             });
-    });
+    }, []);
 
     return { [target]: content };
-}
+};

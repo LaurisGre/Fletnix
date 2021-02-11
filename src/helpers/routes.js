@@ -7,7 +7,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
             render={() => {
                 if (!user) {
                     return children;
-                }
+                };
 
                 if (user) {
                     return (
@@ -17,13 +17,13 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
                             }}
                         />
                     );
-                }
+                };
 
                 return null;
             }}
         />
     );
-}
+};
 
 export function ProtectedRoute({ user, children, ...rest }) {
     return (
@@ -32,7 +32,7 @@ export function ProtectedRoute({ user, children, ...rest }) {
             render={({ location }) => {
                 if (user) {
                     return children;
-                }
+                };
 
                 if (!user) {
                     return (
@@ -43,10 +43,10 @@ export function ProtectedRoute({ user, children, ...rest }) {
                             }}
                         />
                     );
-                }
+                };
 
                 return null;
             }}
         />
     );
-}
+};

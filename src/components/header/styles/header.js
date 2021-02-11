@@ -15,7 +15,6 @@ export const Container = styled.div`
     display: flex;
     margin: 0 56px;
     height: 100px;
-    padding: 18px 0;
     justify-content: space-between;
     align-items: center;
 
@@ -45,7 +44,6 @@ export const ButtonLink = styled(ReactRouterLink)`
     padding: 8px 17px;
     cursor: pointer;
     text-decoration: none;
-    box-sizing: border-box;
 
     &:hover {
         background-color: #f40612;
@@ -199,7 +197,7 @@ export const Logo = styled.img`
 `;
 
 export const Feature = styled(Container)`
-    padding: 150px;
+    padding: 150px 0 500px 0;
     flex-direction: column;
     align-items: normal;
     width: 50%;
