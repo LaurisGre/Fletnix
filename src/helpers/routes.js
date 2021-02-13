@@ -6,10 +6,13 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
             {...rest}
             render={() => {
                 if (!user) {
+                    console.log('IsUserRedirect, not true');
                     return children;
                 };
 
                 if (user) {
+                    console.log('IsUserRedirect, true');
+
                     return (
                         <Redirect
                             to={{
@@ -31,10 +34,13 @@ export function ProtectedRoute({ user, children, ...rest }) {
             {...rest}
             render={({ location }) => {
                 if (user) {
+                    console.log('ProtectedRoute, true');
                     return children;
+
                 };
 
                 if (!user) {
+                    console.log('ProtectedRoute, not true');
                     return (
                         <Redirect
                             to={{
